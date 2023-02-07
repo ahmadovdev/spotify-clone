@@ -54,7 +54,6 @@ const SideBar = () => {
           </Menu.Item>
         </Menu>
       </Wrapper>
-      <Outlet />
     </Container>
   );
 };

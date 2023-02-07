@@ -8,12 +8,14 @@ const MainLayout = () => {
   return (
     <React.Fragment>
       <Wrapper>
-      <SideBar />
-      <Main>          
-      <Header />
-      <Outlet/>
-      </Main>
-      </Wrapper>
+        <SideBar />
+        <Main.Wrapper>
+          <Main>
+            <Header />
+            <Outlet />
+          </Main>
+        </Main.Wrapper>
+        </Wrapper>
     </React.Fragment>
   );
 };
