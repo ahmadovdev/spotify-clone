@@ -6,6 +6,7 @@ const Wrapper = styled.div`
 
 const Main = styled.div`
   display: flex;
+  flex-direction: column;
   flex-basis: 80%;
 `;
 
