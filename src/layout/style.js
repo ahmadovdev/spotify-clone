@@ -2,7 +2,11 @@ import styled from "styled-components";
 
 const Wrapper = styled.div`
   display: flex;
-  flex-direction: row;
 `;
 
-export {Wrapper};
+const Main = styled.div`
+  display: flex;
+  flex-basis: 80%;
+`;
+
+export { Wrapper, Main };
