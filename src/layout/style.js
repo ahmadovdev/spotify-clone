@@ -7,9 +7,11 @@ const Wrapper = styled.div`
 
 const Main = styled.div`
   display: flex;
-  flex-basis: 80%;
+  flex-basis: 100%;
 `;
 
-
+Main.Wrapper = styled.div`
+  width: 100%;
+`;
 
 export { Wrapper, Main };

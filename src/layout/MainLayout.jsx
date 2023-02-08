@@ -9,12 +9,12 @@ const MainLayout = () => {
     <React.Fragment>
       <Wrapper>
         <SideBar />
+        <Main>
         <Main.Wrapper>
-          <Main>
-            <Header />
-            <Outlet />
-          </Main>
+          <Header />
+          <Outlet />
         </Main.Wrapper>
+        </Main>
         </Wrapper>
     </React.Fragment>
   );
