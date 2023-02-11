@@ -16,7 +16,7 @@ const SideBar = () => {
         <Menu>
           <Menu.Item>
             <NavLink
-              to={"home"}
+              to={"/"}
               className={({ isActive }) => (isActive ? "active" : null)}
             >
               <UilHome />
@@ -41,7 +41,7 @@ const SideBar = () => {
         </Menu>
         <Menu>
           <Menu.Item>
-            <NavLink to={"playlist"}>
+            <NavLink to={"Createplaylist"}>
               <UilPlusSquare />
               <p>Create Playlist</p>
             </NavLink>

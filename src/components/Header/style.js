@@ -9,7 +9,7 @@ const Container = styled.div`
   top: 0;
   left: 0;
   right: 0;
-  background: rgb(111, 111, 111, 1);
+  background: #252c2f;
 `;
 
 const Wrapper = styled.div`
