@@ -28,7 +28,7 @@ import {
 export const PlayList = () => {
    const dispatch = useDispatch();
   const { playlist } = useSelector((state) => state.playlist);
-  const { playlists } = useSelector((state) => state.playlists);
+  // const { playlists } = useSelector((state) => state.playlists);
    const { id } = useParams();
 
    console.log(playlist, "id");

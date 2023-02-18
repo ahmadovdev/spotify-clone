@@ -18,8 +18,8 @@ const Root = () => {
           <Route path="library" element={<YourLibraryPage />} />
           <Route path="Createplaylist" element={<CreatePlayListPage />} />
           <Route path="liked" element={<LikedSongsPage />} />
-          <Route path="playlist/:id" element={<PlayList />} />
         </Route>
+          <Route path="playlist/:id" element={<PlayList />} />
         <Route path="*" element={<h1>404 NOT FOUND</h1>} />
       </Routes>
     </BrowserRouter>
