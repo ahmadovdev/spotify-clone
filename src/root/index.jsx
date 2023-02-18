@@ -6,7 +6,7 @@ import { SearchPage } from '../pages/Search';
 import { YourLibraryPage } from "../pages/YourLibrary";
 import { CreatePlayListPage } from "../pages/CreatePlayList";
 import {LikedSongsPage} from '../pages/LikedSongs';
-import { Playlist } from '../components/Playlist';
+import { PlayList } from '../components/PlayList';
 
 const Root = () => {
   return (
@@ -18,7 +18,7 @@ const Root = () => {
           <Route path="library" element={<YourLibraryPage />} />
           <Route path="Createplaylist" element={<CreatePlayListPage />} />
           <Route path="liked" element={<LikedSongsPage />} />
-          <Route path="playlist" element={<Playlist />} />
+          <Route path="playlist/:id" element={<PlayList />} />
         </Route>
         <Route path="*" element={<h1>404 NOT FOUND</h1>} />
       </Routes>

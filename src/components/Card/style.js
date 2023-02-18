@@ -1,8 +1,8 @@
 import styled from "styled-components";
 
 const Container = styled.div`
-  width: 181px;
-  height: 280px;
+  // width: 181px;
+  // height: 280px;
   background-color: #161616;
   border-radius: 5px;
   padding: 15px;
@@ -15,10 +15,11 @@ const Container = styled.div`
 `;
   
   const Image = styled.img`
-  height: 181px;
-  width: 181px;
-  border-radius: 5px;
-`;
+    max-height: 181px;
+    min-height: 171px;
+    width: 100%;
+    border-radius: 5px;
+  `;
 
 const Title = styled.div`
   font-size: 14px;

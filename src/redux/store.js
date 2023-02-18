@@ -1,8 +1,10 @@
 import { configureStore } from "@reduxjs/toolkit";
-import user_profile from "./userProfile/slice";
+import playlists from "./userBrowse/slice";
+import playlist from "./PlayListItem/slice";
 
 export const store = configureStore({
   reducer: {
-    user_profile,
+    playlists,
+    playlist,
   },
 });

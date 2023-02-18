@@ -1,13 +1,14 @@
 import styled from "styled-components";
 
 const Section = styled.section`
-  background-color: red;
-  // background-color: #161113;
+  padding: 0px 80px;
+  background-color: #161113;
 `;
 
 const Container = styled.div`
-  padding: 0px 80px;
+  padding-top: 20px;
 `;
+
 
 const ContentSpacing = styled.div`
   display: flex;
@@ -98,11 +99,13 @@ const PlayListNavbarItems = styled.div`
   align-items: center;
   border-bottom: 2px solid #898989;
   color: #898989;
+  font-size: 12px;
 `;
 
 const PlaylistNavbarItem = styled.div`
-  padding-left: 5px;
+  padding-left: 2px;
 `;
+
 
 export {
   Section,

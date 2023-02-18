@@ -2,16 +2,19 @@ import React from "react";
 import { Link } from "react-router-dom";
 import { Container, Description, Image, Title } from './style';
 
-const Card = () => {
+const Card = ({data}) => {
+  const { name, owner, images, id } = data;
   return (
-    <Link to={'playlist'}>
+    <Link to={`/playlist/${id}`}>
       <Container>
-        <Image src="https://i.scdn.co/image/ab67616d0000b273fa258529452f4ed34cc961b1" />
+        {images.map((item, idx) => (
+          <Image key={idx} src={item.url} />
+        ))}
         <Title>
-          <p>name</p>
+          <p>{name || 0} </p>
         </Title>
         <Description>
-          <p>track</p>
+          <p> {owner.display_name} </p>
         </Description>
       </Container>
     </Link>

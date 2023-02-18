@@ -1,9 +1,43 @@
 import React from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { useParams } from "react-router-dom";
+import { fetchPlaylistItem } from "../../redux/PlayListItem/slice";
+import { fetchPlaylists } from "../../redux/userBrowse/slice";
+import { PlaylistCard } from "../PlaylistCard";
 import {
-  Section, Container, ContentSpacing, WrapperImage, ImgContent,  TitleContent,  TitleName, TitleDescr, TitleArtists, TitleAddress,TitleStat, PlaylistItems, PlayListMenu, PlayListSpan,PlayListLike,PlayListButton,PlayListNavbarItems,PlaylistNavbarItem
+  Section,
+  Container,
+  ContentSpacing,
+  WrapperImage,
+  ImgContent,
+  TitleContent,
+  TitleName,
+  TitleDescr,
+  TitleArtists,
+  TitleAddress,
+  TitleStat,
+  PlaylistItems,
+  PlayListMenu,
+  PlayListSpan,
+  PlayListLike,
+  PlayListButton,
+  PlayListNavbarItems,
+  PlaylistNavbarItem,
 } from "./style";
 
-export const Playlist = () => {
+export const PlayList = () => {
+   const dispatch = useDispatch();
+  const { playlist } = useSelector((state) => state.playlist);
+  const { playlists } = useSelector((state) => state.playlists);
+   const { id } = useParams();
+
+   console.log(playlist, "id");
+
+   React.useEffect(() => {
+     dispatch(fetchPlaylistItem(id));
+     dispatch(fetchPlaylists())
+   }, []);
+
   return (
     <Section>
       <Container>
@@ -67,12 +101,15 @@ export const Playlist = () => {
           </PlayListMenu>
           <PlayListNavbarItems>
             <PlaylistNavbarItem>#</PlaylistNavbarItem>
-            <PlaylistNavbarItem>name</PlaylistNavbarItem>
-            <PlaylistNavbarItem>name</PlaylistNavbarItem>
-            <PlaylistNavbarItem>name</PlaylistNavbarItem>
-            <PlaylistNavbarItem>name</PlaylistNavbarItem>
+            <PlaylistNavbarItem>TITLE</PlaylistNavbarItem>
+            <PlaylistNavbarItem>ALBUM</PlaylistNavbarItem>
+            <PlaylistNavbarItem>DATE ADDED</PlaylistNavbarItem>
+            <PlaylistNavbarItem>TIME</PlaylistNavbarItem>
           </PlayListNavbarItems>
         </PlaylistItems>
+        {playlist.map((item, idx) => (
+          <PlaylistCard key={idx} number={idx+1} {...item} />
+        ))}
       </Container>
     </Section>
   );

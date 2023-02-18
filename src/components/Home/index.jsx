@@ -1,24 +1,28 @@
 import React from "react";
 import { Container, CardWrapper,  Title, Section } from "./style";
 import Card from "../Card/index";
-import { fetchTracks } from "../../redux/userProfile/slice";
+import { fetchPlaylists } from "../../redux/userBrowse/slice";
 import { useSelector, useDispatch } from "react-redux";
 
 const Home = () => {
   const dispatch = useDispatch();
-  // const { user_profile } = useSelector((state) => state.user_profile);
+  const { playlists } = useSelector((state) => state.playlists);
+  
+  console.log(playlists);
   
   React.useEffect(() => {
-    dispatch(fetchTracks());
+    dispatch(fetchPlaylists());
   }, []);
   return (
     <Section>
       <Container>
         <Title>
-          <h3>Home</h3>
+          <h3>{ playlists.message }</h3>
         </Title>
         <CardWrapper>
-        <Card />
+          {playlists?.playlists?.items.map((value, idx) => (
+            <Card key={idx} data={value} />
+          ))}
         </CardWrapper>
       </Container>
     </Section>
