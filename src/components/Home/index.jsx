@@ -8,7 +8,7 @@ const Home = () => {
   const dispatch = useDispatch();
   const { playlists } = useSelector((state) => state.playlists);
   
-  console.log(playlists);
+  // console.log(playlists);
   
   React.useEffect(() => {
     dispatch(fetchPlaylists());

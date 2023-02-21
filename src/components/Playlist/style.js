@@ -1,14 +1,13 @@
 import styled from "styled-components";
 
 const Section = styled.section`
-  padding: 0px 80px;
+  padding: 0px 32px;
   background-color: #161113;
 `;
 
 const Container = styled.div`
   padding-top: 20px;
 `;
-
 
 const ContentSpacing = styled.div`
   display: flex;
@@ -18,7 +17,7 @@ const ContentSpacing = styled.div`
 
 const WrapperImage = styled.div``;
 
-const ImgContent = styled.div`
+const ImgContent = styled.img`
   width: 232px;
   height: 232px;
 `;
@@ -39,13 +38,25 @@ const TitleArtists = styled.p`
   font-weight: 500;
 `;
 
+const TitleUserSpotify = styled.span`
+display: flex;
+align-items: center;
+`;
+
+const TitleUserSpotifyLogo = styled.img`
+  width: 24px;
+  height: 24px;
+
+`;
+
 const TitleAddress = styled.a`
   color: #fff;
   font-weight: 500;
   font-size: 12px;
+  padding-left: 5px;
 `;
 
-const TitleStat = styled.span`
+const TitleStat = styled.div`
   padding-left: 5px;
   font-size: 12px;
   font-weight: 500;
@@ -54,7 +65,7 @@ const TitleStat = styled.span`
 const PlaylistItems = styled.div``;
 
 const PlayListMenu = styled.div`
-  padding-bottom: 32px;
+  padding: 32px 0px;
   display: flex;
   align-items: center;
   gap: 20px;
@@ -93,6 +104,10 @@ const PlayListButton = styled.button`
 `;
 
 const PlayListNavbarItems = styled.div`
+  // position: sticky;
+  // top: 0;
+  // left: 0;
+  // right: 200px;
   height: 36px;
   display: grid;
   grid-template-columns: 25px 6fr 4fr 3fr 1fr;
@@ -106,7 +121,6 @@ const PlaylistNavbarItem = styled.div`
   padding-left: 2px;
 `;
 
-
 export {
   Section,
   Container,
@@ -117,6 +131,8 @@ export {
   TitleName,
   TitleDescr,
   TitleArtists,
+  TitleUserSpotify,
+  TitleUserSpotifyLogo,
   TitleAddress,
   TitleStat,
   PlaylistItems,

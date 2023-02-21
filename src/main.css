@@ -14,3 +14,9 @@
 a{
   color: #aea9a3;
 }
+.filter-green{
+  fill: #B5B9BB;
+}
+.filter-green:hover{
+  color: #fff
+}

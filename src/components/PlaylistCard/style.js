@@ -1,21 +1,16 @@
 import styled from "styled-components";
 
-
-const PlayListTracks = styled.div`
-  padding-left: 4px;
-  padding-top: 10px;
-`;
+const PlayListTracks = styled.div``;
 
 const PlayListTrack = styled.div`
   height: 56px;
   display: grid;
   grid-template-columns: 25px 6fr 4fr 3fr 1fr;
+  grid-gap: 16px;
   align-items: center;
 `;
 
-const PlayListTrackNumberItems = styled.div``;
-
-const PlayListTrackNumberItem = styled.span`
+const PlayListTrackNumberItem = styled.div`
   color: #adabaf;
   font-size: 16px;
   font-weight: 600;
@@ -32,14 +27,30 @@ const PlayListTrackTitleImage = styled.img`
 `;
 
 const PlayListTrackTitleExtraLink = styled.div`
-  display: flex;
+  display: grid;
   flex-direction: column;
+  align-content: space-around;
 `;
 
 const PlayListTrackTitleLinkTrack = styled.a`
   color: #fff;
   font-size: 12px;
   font-weight: 600;
+`;
+
+const PlayListTrackTitleLinkTrackArtist = styled.a`
+  display: flex;
+  color: #b3b3b3;
+  font-size: 12px;
+  font-weight: 400;
+`;
+
+const PlayListTrackTitleLinkTrackAlbum = styled.a`
+  display: flex;
+  align-items: center;
+  color: #b3b3b3;
+  font-size: 12px;
+  font-weight: 400;
 `;
 
 const PlayListTrackAlbum = styled.div``;
@@ -59,12 +70,13 @@ const PlayListTrackTimeDuration = styled.div`
 export {
   PlayListTracks,
   PlayListTrack,
-  PlayListTrackNumberItems,
   PlayListTrackNumberItem,
   PlayListTrackTitle,
   PlayListTrackTitleImage,
   PlayListTrackTitleExtraLink,
   PlayListTrackTitleLinkTrack,
+  PlayListTrackTitleLinkTrackArtist,
+  PlayListTrackTitleLinkTrackAlbum,
   PlayListTrackAlbum,
   PlayListTrackDataAdd,
   PlayListTrackTimeDuration,

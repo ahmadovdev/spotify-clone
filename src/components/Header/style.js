@@ -1,10 +1,9 @@
 import styled from "styled-components";
 
 const Container = styled.div`
-  // max-width: 1440px;
   height: 64px;
   display: flex;
-  padding: 0px 70px;
+  padding: 0px 32px;
   position: sticky;
   top: 0;
   left: 0;
