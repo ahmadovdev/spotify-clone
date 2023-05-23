@@ -1,20 +1,21 @@
 import React from "react";
-import { Container, MainWrapper, SidebarWrapper } from "./style.js";
 import { Outlet } from "react-router-dom";
 import Sidebar from "../components/Sidebar";
 import Header from "../components/Header";
 
 const MainLayout = () => {
   return (
-    <Container>
-      <SidebarWrapper>
+    <div className="grid grid-cols-5 gap-2 h-full min-h-0 bg-yellow-500">
+      <div>
         <Sidebar />
-      </SidebarWrapper>
-      <MainWrapper>
+      </div>
+      <div className="bg-[#121212] rounded-lg col-span-4">
         <Header />
-        <Outlet />
-      </MainWrapper>
-    </Container>
+        <div className="max-w-[1955px]">
+          <Outlet />
+        </div>
+      </div>
+    </div>
   );
 };
 

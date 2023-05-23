@@ -1,40 +1,29 @@
 import React from "react";
-import {
-  Container,
-  Arrow,
-  Right,
-  Button,
-  Wrapper,
-  ArrowItem,
-  // Center,
-} from "./style";
 import { UilAngleRight, UilAngleLeft } from "@iconscout/react-unicons";
-// import { SearchBar } from "../SearchBar";
-// import { useLocation } from "react-router-dom";
 
 const Header = () => {
-  // const location = useLocation().pathname;
   return (
-    <Container>
-      <Wrapper>
-        <ArrowItem>
-          <Arrow>
+    <header className="h-16 flex px-8 sticky top-0 left-0 right-0 bg-white bg-opacity-50 backdrop-blur rounded-t-lg">
+      <div className="w-full flex justify-between items-center">
+        <div className="flex gap-3">
+          <div className="flex items-center cursor-pointer text-slate-50 bg-black rounded-full">
             <UilAngleLeft />
-          </Arrow>
-          <Arrow>
+          </div>
+          <div className="flex items-center cursor-pointer text-slate-50 bg-black rounded-full">
             <UilAngleRight />
-          </Arrow>
-        </ArrowItem>
-        {/* <Center> */}
-          {/* {location.slice(1, 7) === "search" ? <SearchBar /> : null} */}
-        {/* </Center> */}
-        <Right>
-          <Button>Sign up</Button>
-          <Button login>Log in</Button>
-        </Right>
-      </Wrapper>
-    </Container>
+          </div>
+        </div>
+        <div className="flex gap-4">
+          <button className="px-8 py-2 rounded-full border-none cursor-pointer bg-slate-50 text-black font-semibold">
+            Sign up
+          </button>
+          <button className="px-8 py-2 rounded-full border-none cursor-pointer bg-slate-50 text-black font-semibold">
+            Log in
+          </button>
+        </div>
+      </div>
+    </header>
   );
 };
 
-export default Header
+export default Header;
