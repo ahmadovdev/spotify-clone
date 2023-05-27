@@ -2,7 +2,7 @@ import React from "react";
 import PropTypes from "prop-types";
 // import { Link } from "react-router-dom";
 
-const PlaylistCard = ({categoryId, limiter}) => {
+const PlaylistCard = ({ categoryId, limiter }) => {
   const dataPlaylists = [
     {
       id: 101,
@@ -125,9 +125,9 @@ const PlaylistCard = ({categoryId, limiter}) => {
     },
   ];
 
-  let matchedPlayListcard = dataPlaylists.filter(
-    (playist) => playist.category_id === categoryId
-  ).slice(0, limiter);
+  let matchedPlayListcard = dataPlaylists
+    .filter((playist) => playist.category_id === categoryId)
+    .slice(0, limiter);
 
   return (
     <>
@@ -159,6 +159,6 @@ const PlaylistCard = ({categoryId, limiter}) => {
 export default PlaylistCard;
 
 PlaylistCard.propTypes = {
-  categoryId: PropTypes.number.isRequired, 
-  limiter: PropTypes.number.isRequired
+  categoryId: PropTypes.number.isRequired,
+  limiter: PropTypes.number.isRequired,
 };

@@ -11,7 +11,7 @@ export const Root = () => {
     <Routes>
       <Route path="/" element={<MainLayout />}>
         <Route index element={<Home />} />
-        <Route path="search/:saerchTerm" element={<Search />} />
+        <Route path="search" element={<Search />} />
         <Route path="library" element={<YourLibrary />} />
         <Route path="playlist" element={<Playlist />} />
       </Route>
