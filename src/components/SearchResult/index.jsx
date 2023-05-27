@@ -34,7 +34,7 @@ const SearchResult = () => {
           <h2 className="text-2xl font-bold text-[#fff]">Songs</h2>
           <div className="w-full h-64">
             <div className="flex flex-col">
-              <div className="cursor-pointer h-16 w-full px-4 rounded-md flex items-center gap-4 hover:bg-neutral-700">
+              <div className="cursor-pointer h-16 w-full px-2 rounded-md flex items-center gap-4 hover:bg-neutral-700">
                 <img
                   className="h-10 w-10"
                   src="https://i.scdn.co/image/ab67616d00001e025e30bda19dabe31278991719"

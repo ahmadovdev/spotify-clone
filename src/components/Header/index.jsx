@@ -16,14 +16,12 @@ const Header = () => {
             <UilAngleRight />
           </div>
         </div>
-        <div>
-          {location.slice(1,7) === 'search' ? <SearchBar /> : null}
-        </div>
+        <div>{location.slice(1, 7) === "search" ? <SearchBar /> : null}</div>
         <div className="flex gap-4">
-          <button className="px-8 py-2 rounded-full border-none cursor-pointer bg-slate-50 text-black font-semibold">
+          <button className="px-8 py-2 rounded-full border-none cursor-pointer bg-slate-50 text-black">
             Sign up
           </button>
-          <button className="px-8 py-2 rounded-full border-none cursor-pointer bg-slate-50 text-black font-semibold">
+          <button className="px-8 py-2 rounded-full border-none cursor-pointer bg-black text-slate-50  font-semibold">
             Log in
           </button>
         </div>
