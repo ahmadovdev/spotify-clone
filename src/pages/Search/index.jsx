@@ -7,7 +7,7 @@ export const Search = () => {
   return (
     <div>
       {
-        searchData === null ? <FeaturedPlaylist />:<SearchResult />
+        searchData === null ? <SearchResult /> : <FeaturedPlaylist />
       }
     </div>
   );
