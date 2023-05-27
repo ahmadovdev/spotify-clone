@@ -3,7 +3,7 @@ import PlayListsSection from "../../components/PlayListsSection";
 
 export const Home = () => {
   return (
-    <div className="px-6">
+    <div>
       <PlayListsSection />
     </div>
   );

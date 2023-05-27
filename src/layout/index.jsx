@@ -5,13 +5,13 @@ import Header from "../components/Header";
 
 const MainLayout = () => {
   return (
-    <div className="grid grid-cols-5 gap-2 h-full min-h-0 bg-yellow-500">
-      <div>
+    <div className="grid grid-cols-[auto,1fr] gap-2 h-full min-h-0 bg-yellow-500">
+      <div className="md:w-[420px]">
         <Sidebar />
       </div>
-      <div className="bg-[#121212] rounded-lg col-span-4">
+      <div className="bg-[#121212] rounded-lg">
         <Header />
-        <div className="max-w-[1955px]">
+        <div className="max-w-[1955px] px-6">
           <Outlet />
         </div>
       </div>

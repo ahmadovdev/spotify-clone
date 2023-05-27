@@ -130,18 +130,21 @@ const PlaylistCard = ({categoryId, limiter}) => {
   ).slice(0, limiter);
 
   return (
-  <>
+    <>
       {matchedPlayListcard.map((playist, id) => (
-        <div className="w-full bg-slate-800 rounded-md p-4 overflow-hidden" key={id}>
+        <div
+          className="w-full bg-[#171717] rounded-md p-4 overflow-hidden"
+          key={id}
+        >
           <div className="h-[164px]">
-            <img src={playist.img} alt="Pic 1" className="w-full h-full"/>
+            <img src={playist.img} alt="Pic 1" className="w-full h-full" />
           </div>
           <div className="min-h-[62px] box-border">
             <a
               href="#"
               className="text-slate-50 no-underline text-base font-bold"
             >
-            {playist.name}
+              {playist.name}
             </a>
             <div className="text-sm font-normal text-slate-400">
               <span>{playist.desc}</span>

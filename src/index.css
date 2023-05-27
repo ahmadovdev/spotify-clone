@@ -1,3 +1,7 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.svgHeart{
+  @apply text-[#c3cbca]
+}

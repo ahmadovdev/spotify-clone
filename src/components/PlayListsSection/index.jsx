@@ -47,7 +47,7 @@ const PlayListsSection = () => {
 
   return (
     <section className="max-w-full" ref={cardsSectionRef}>
-      <div className="px-3 py-3">
+      <div>
         {dataCategories.map((category, id) => (
           <section key={id}>
             <div>

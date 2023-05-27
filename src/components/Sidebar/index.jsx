@@ -20,10 +20,8 @@ const links = [
   },
 ];
 const Sidebar = () => {
-
-
   return (
-    <nav className="bg-black h-screen rounded-lg sticky top-0 left-0 right-0">
+    <nav className="bg-black h-screen min-w-[232px] rounded-lg sticky top-0 left-0 right-0">
       <ul className="py-2 px-3 list-none">
         <li className="py-1 px-3 text-slate-400">
           {links.map((item) => (
