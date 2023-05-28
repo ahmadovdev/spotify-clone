@@ -1,5 +1,6 @@
 import React from "react";
 import PlaylistCard from "../PlaylistCard";
+import { useGetCurrentPlaylistQuery } from "../../redux/services/spotifyCoreApi";
 
 const PlayListsSection = () => {
   const cardsSectionRef = React.useRef();
@@ -28,6 +29,7 @@ const PlayListsSection = () => {
     },
   ];
 
+  
   React.useEffect(() => {
     // resizer function
     const handleResize = () => {
@@ -44,22 +46,26 @@ const PlayListsSection = () => {
     return () => window.removeEventListener("resize", handleResize);
   }, []);
   
+  const { data = [], isFetching, error } = useGetCurrentPlaylistQuery();
+  if (isFetching) return console.log("loading");
+  if (error) return console.log(error);
+  console.log(data);
 
   return (
     <section className="max-w-full" ref={cardsSectionRef}>
       <div>
-        {dataCategories.map((category, id) => (
-          <section key={id}>
+        {/* {data.map((message, playlists, index) => ( */}
+          <section>
             <div>
-              <h2 className="text-[2rem] font-bold box-border text-[#fff]">{category.name}</h2>
+              <h2 className="text-[2rem] font-bold box-border text-[#fff]">{data.message}</h2>
             </div>
             <div
               className={`grid gap-6 grid-cols-[repeat(auto-fill,minmax(164px,1fr))] my-4`}
             >
-              <PlaylistCard categoryId={category.id} limiter={columnCount} />
+              <PlaylistCard limiter={columnCount} />
             </div>
           </section>
-        ))}
+        {/* ))} */}
       </div>
     </section>
   );

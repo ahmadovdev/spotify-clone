@@ -13,7 +13,7 @@ export const Root = () => {
         <Route index element={<Home />} />
         <Route path="search" element={<Search />} />
         <Route path="library" element={<YourLibrary />} />
-        <Route path="playlist" element={<Playlist />} />
+        <Route path="playlist/:id" element={<Playlist />} />
       </Route>
     </Routes>
   );

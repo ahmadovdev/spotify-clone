@@ -9,7 +9,6 @@ export const Playlist = () => {
       <PlaylistTitle />
       <PlaylistHeader />
       <PlaylistTracks />
-      
     </section>
   );
 };

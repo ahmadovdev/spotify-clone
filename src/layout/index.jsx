@@ -11,7 +11,7 @@ const MainLayout = () => {
       </div>
       <div className="bg-[#121212] rounded-lg">
         <Header />
-        <div className="max-w-[1955px] px-6">
+        <div className="max-w-[1955px]">
           <Outlet />
         </div>
       </div>

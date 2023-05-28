@@ -1,8 +1,40 @@
 import React from "react";
 
+const colors = [
+  "from-indigo-500",
+  "from-blue-500",
+  "from-green-500",
+  "from-red-500",
+  "from-yellow-500",
+  "from-pink-500",
+  "from-purple-500",
+];
+
+
 const PlaylistTitle = () => {
+   const [color, setColor] = React.useState(colors[0]);
+   const [opacity, setOpacity] = React.useState(0);
+   const [textOpacity, setTextOpacity] = React.useState(0);
+
+   const changeOpacity = (scrollData) => {
+     const offset = 340;
+     const textOffset = 10;
+     if (scrollData < offset) {
+       const newOpacity = 1 - (offset - scrollData) / offset;
+       setOpacity(newOpacity);
+       setTextOpacity(0);
+     } else {
+       setOpacity(1);
+       const delta = scrollData - offset;
+       const newTextOpacity = 1 - (textOffset - delta) / textOffset;
+       setTextOpacity(newTextOpacity);
+     }
+   };
   return (
-    <div className="flex h-[30vh] max-h-[400px] min-h-[340px] text-[#fff]">
+    <div
+      onScroll={(e) => changeOpacity(e.target.scrollTop)}
+      className={`flex h-[30vh] max-h-[400px] min-h-[340px] text-[#fff] bg-gradient-to-b to-neutral-900 ${color} px-6 pb-4`}
+    >
       <div className="self-end h-[192px] w-[192px] min-w-[192px] me-6">
         <div className="h-[inherit]">
           <img

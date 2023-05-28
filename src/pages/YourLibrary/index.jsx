@@ -60,9 +60,9 @@ export const YourLibrary = () => {
   }, []);
 
   return (
-    <div ref={cardsSectionRef} className="flex flex-col gap-4 h-screen mt-3">
+    <div ref={cardsSectionRef} className="flex flex-col gap-4 h-screen mt-3 px-6">
       <h2 className="text-2xl font-bold text-[#fff]">Playlists</h2>
-      <div className="grid gap-6 grid-cols-[repeat(auto-fill,minmax(164px,1fr))] my-4">
+      <div className="grid gap-6 grid-cols-[repeat(auto-fill,minmax(164px,1fr))]">
         <div className="relative p-5 text-[#fff] text-base col-span-2 bg-gradient-to-br from-purple-600 to-indigo-500 rounded-lg hover:bg-neutral-700 transition duration-500 group">
           <div className="absolute opacity-0 group-hover:opacity-100 transition-all ease-in-out duration-200 shadow-2xl shadow-neutral-900 z-10 h-12 w-12 flex items-center justify-center rounded-full bg-green-500 top-[190px] right-6">
             <UilPlay className="h-6 w-6 text-black" />
@@ -90,7 +90,7 @@ export const YourLibrary = () => {
         </div>
         {dataPlaylists.map((playist, id) => (
           <div
-            className="w-full bg-[#171717] rounded-md p-4 overflow-hidden"
+            className="bg-[#171717] rounded-md p-4"
             key={id}
           >
             <div className="h-[164px]">

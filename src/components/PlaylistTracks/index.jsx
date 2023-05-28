@@ -2,7 +2,7 @@ import React from "react";
 
 const PlaylistTracks = () => {
   return (
-    <div> 
+    <div className="px-6 "> 
       <div className="border-b-[1px] border-[#727272] cursor-pointer">
         <div className="grid grid-cols-[16px,6fr,4fr,3fr,minmax(120px,1fr)] gap-4 mx-[-24px] px-6 text-[#c3cbca]">
           <div className="flex items-center justify-self-end">#</div>
