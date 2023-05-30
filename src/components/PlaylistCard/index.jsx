@@ -1,37 +1,38 @@
 import React from "react";
-import { useGetCurrentPlaylistQuery } from "../../redux/services/spotifyCoreApi";
 import { Link } from "react-router-dom";
+import { UilPlay } from "@iconscout/react-unicons";
 
-const PlaylistCard = () => {
-  const { data = [], isFetching, error } = useGetCurrentPlaylistQuery();
-  if (isFetching) return console.log("loading");
-  if (error) return console.log(error);
-  console.log(data);
+const PlaylistCard = ({ limiter, playlists }) => {
   return (
     <>
-      {data.playlists.items.map((playlist, idx) => (
+      {playlists.items.slice(0, limiter).map((playlist, idx) => (
         <>
-          <Link to={`playlist/${playlist.id}`}>
+          <Link to={`/playlists/${playlist.id}`}>
             <div
-              className="w-full bg-[#171717] rounded-md p-4 overflow-hidden"
               key={idx}
+              className="w-full cursor-pointer  group bg-neutral-800 hover:bg-neutral-700 flex flex-col gap-6 rounded-md transition duration-500 "
             >
-              <div className="h-[164px]">
-                <img
-                  src={playlist.images[0].url}
-                  alt="Pic 1"
-                  className="w-full h-full"
-                />
-              </div>
-              <div className="min-h-[62px] box-border">
-                <a
-                  href="#"
-                  className="text-slate-50 no-underline text-base font-bold"
-                >
-                  {playlist.name}
-                </a>
-                <div className="text-sm font-normal text-slate-400">
-                  <span>{playlist.owner.display_name}</span>
+              <div className="h-full relative bg-[#171717] rounded-md p-4">
+                <div className="relative">
+                  <div className="absolute opacity-0 transition-all ease-in-out duration-500 shadow-2xl shadow-neutral-900 z-10 h-12 w-12 flex items-center justify-center rounded-full bg-green-500 bottom-6 right-2 group-hover:opacity-100 group-hover:bottom-15">
+                    <UilPlay className="h-6 w-6 text-black" />
+                  </div>
+                  <img
+                    src={playlist.images[0].url}
+                    alt="Pic 1"
+                    className="w-full h-full"
+                  />
+                </div>
+                <div className="min-h-[62px] box-border">
+                  <a
+                    href="#"
+                    className="text-slate-50 no-underline text-base font-bold"
+                  >
+                    {playlist.name}
+                  </a>
+                  <div className=" text-sm font-normal text-slate-400">
+                    <p className="truncate">{playlist.description}</p>
+                  </div>
                 </div>
               </div>
             </div>

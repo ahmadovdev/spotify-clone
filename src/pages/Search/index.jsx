@@ -7,7 +7,7 @@ export const Search = () => {
   return (
     <div className="px-6">
       {
-        searchData === null ? <SearchResult /> : <FeaturedPlaylist />
+        searchData === null ? <FeaturedPlaylist /> : <SearchResult /> 
       }
     </div>
   );

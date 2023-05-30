@@ -10,26 +10,27 @@ const colors = [
   "from-purple-500",
 ];
 
+const PlaylistTitle = ({data}) => {
+  const [color, setColor] = React.useState(colors[0]);
+  const [opacity, setOpacity] = React.useState(0);
+  const [textOpacity, setTextOpacity] = React.useState(0);
 
-const PlaylistTitle = () => {
-   const [color, setColor] = React.useState(colors[0]);
-   const [opacity, setOpacity] = React.useState(0);
-   const [textOpacity, setTextOpacity] = React.useState(0);
+  console.log(data);
 
-   const changeOpacity = (scrollData) => {
-     const offset = 340;
-     const textOffset = 10;
-     if (scrollData < offset) {
-       const newOpacity = 1 - (offset - scrollData) / offset;
-       setOpacity(newOpacity);
-       setTextOpacity(0);
-     } else {
-       setOpacity(1);
-       const delta = scrollData - offset;
-       const newTextOpacity = 1 - (textOffset - delta) / textOffset;
-       setTextOpacity(newTextOpacity);
-     }
-   };
+  const changeOpacity = (scrollData) => {
+    const offset = 340;
+    const textOffset = 10;
+    if (scrollData < offset) {
+      const newOpacity = 1 - (offset - scrollData) / offset;
+      setOpacity(newOpacity);
+      setTextOpacity(0);
+    } else {
+      setOpacity(1);
+      const delta = scrollData - offset;
+      const newTextOpacity = 1 - (textOffset - delta) / textOffset;
+      setTextOpacity(newTextOpacity);
+    }
+  };
   return (
     <div
       onScroll={(e) => changeOpacity(e.target.scrollTop)}
@@ -37,24 +38,20 @@ const PlaylistTitle = () => {
     >
       <div className="self-end h-[192px] w-[192px] min-w-[192px] me-6">
         <div className="h-[inherit]">
-          <img
-            className="h-full w-full"
-            src="https://images.unsplash.com/photo-1587223075055-82e9a937ddff?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2700&q=80"
-            alt=""
-          />
+          <img className="h-full w-full" src={data.images[0].url} alt="playlist" />
         </div>
       </div>
       <div className="flex justify-end flex-col">
         <span className="text-sm box-border font-bold text-[inherit]">
-          Playlist
+          {data.type}
         </span>
         <span className="leading-normal mt-2 text-left w-full">
-          <h1 className="mt-[0.08rem] mb-[0.12rem] w-full text-8xl font-black text-[#fff]">
-            Peaceful Piano
+          <h1 className="mt-[0.08rem] mb-[0.8rem] w-full text-8xl font-black text-[#fff]">
+            {data.name}
           </h1>
         </span>
         <span className="text-[#c7c5bc] text-sm box-border font-normal">
-          Peaceful piano to help you slow down, breathe, and relax.
+          {data.description}
         </span>
         <div className="flex flex-wrap mt-2">
           <div className="grid gap-[4px] grid-flow-col">
@@ -71,10 +68,10 @@ const PlaylistTitle = () => {
               <a href="#">Spotify</a>
             </span>
             <span className="text-[inherit] box-border font-normal text-sm">
-              7,049,380 likes
+              {data.followers.total} likes
             </span>
             <span className="text-[inherit] box-border font-normal text-sm">
-              305 songs, about 11 hr
+              {data.tracks.total} songs, about 11 hr
             </span>
           </div>
         </div>
