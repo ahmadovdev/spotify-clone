@@ -13,6 +13,7 @@
     "@iconscout/react-unicons": "^2.0.2",
     "@reduxjs/toolkit": "^1.9.5",
     "lodash": "^4.17.21",
+    "moment": "^2.29.4",
     "prop-types": "^15.8.1",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",

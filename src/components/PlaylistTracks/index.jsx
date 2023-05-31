@@ -1,8 +1,21 @@
 import React from "react";
+import moment from "moment";
+import { UilPlay } from "@iconscout/react-unicons";
 
-const PlaylistTracks = () => {
+const PlaylistTracks = ({ data }) => {
+  const millisecondsToMinutesSeconds = (ms) => {
+    let duration = moment.duration(ms, "milliseconds");
+    let fromMinutes = Math.floor(duration.asMinutes());
+    let fromSeconds = Math.floor(duration.asSeconds() - fromMinutes * 60);
+
+    return Math.floor(duration.asSeconds()) >= 60
+      ? (fromMinutes <= 9 ? "0" + fromMinutes : fromMinutes) +
+          ":" +
+          (fromSeconds <= 9 ? "0" + fromSeconds : fromSeconds)
+      : "00:" + (fromSeconds <= 9 ? "0" + fromSeconds : fromSeconds);
+  };
   return (
-    <div className="px-6 "> 
+    <div className="px-6">
       <div className="border-b-[1px] border-[#727272] cursor-pointer">
         <div className="grid grid-cols-[16px,6fr,4fr,3fr,minmax(120px,1fr)] gap-4 mx-[-24px] px-6 text-[#c3cbca]">
           <div className="flex items-center justify-self-end">#</div>
@@ -42,41 +55,39 @@ const PlaylistTracks = () => {
           </div>
         </div>
       </div>
-      <div className="w-full h-full">
-        <div className="">
+      {data.tracks.items.map((item, idx) => (
+        <div
+          key={item.id}
+          className="w-full h-full px-3 mt-3 hover:bg-white hover:bg-opacity-10 rounded-lg"
+        >
           <div>
             <div className="grid grid-cols-[16px,6fr,4fr,3fr,minmax(120px,1fr)] gap-4 h-14">
               <div className="flex items-center">
                 <div className="text-[#b3b3b3] inline-block h-4 min-h-[16px] min-w-[16px] w-4 relative">
-                  <span className="text-base font-normal box-border absolute top-[-4px]">1</span>
+                  <span className="text-base font-normal box-border absolute top-[-4px]">
+                    {idx + 1}
+                  </span>
                 </div>
               </div>
               <div className="flex items-center">
                 <img
-                  src="https://i.scdn.co/image/ab67616d0000485151d97e0f7c2ab63f2006f451"
+                  src={item.track.album.images[2].url}
                   alt="Music Image"
                   className="mr-4 object-cover w-10 h-10"
                 />
                 <div className="grid items-center grid-rows-2 pr-2">
                   <a
-                    href="#"
-                    className="text-[#fff] grid-cols-2 justify-self-start text-sm"
+                    href={item.track.href}
+                    className="text-[#fff] grid-cols-2 justify-self-start text-sm hover:underline"
                   >
-                    MusicName
+                    {item.track.name}
                   </a>
                   <span className="text-sm box-border font-normal text-[#a7a7a7]">
                     <a
                       href="#"
-                      className="text-[#fff] grid-cols-2 justify-self-start text-sm"
+                      className="text-[#b3b3b3] grid-cols-2 justify-self-start text-xs"
                     >
-                      ArtistName
-                    </a>
-                    ,
-                    <a
-                      href="#"
-                      className="text-[#fff] grid-cols-2 justify-self-start text-sm"
-                    >
-                      ArtistName
+                      {item.track.artists[0].name}
                     </a>
                   </span>
                 </div>
@@ -84,22 +95,24 @@ const PlaylistTracks = () => {
               <div className="flex items-center justify-self-start">
                 <span className="text-sm font-normal box-border">
                   <a href="#" className="text-[#b3b3b3]">
-                    MusicName
+                    {item.track.album.name}
                   </a>
                 </span>
               </div>
               <div className="flex items-center justify-self-start">
                 <span className="text-sm font-normal box-border text-[#b3b3b3]">
-                  20 hours ago
+                  {moment(item.added_at).fromNow()}
                 </span>
               </div>
               <div className="flex items-center justify-self-end ">
-                <div className="text-sm mr-4 font-normal text-[#b3b3b3]">2:30</div>
+                <div className="text-sm mr-4 font-normal text-[#b3b3b3]">
+                  {millisecondsToMinutesSeconds(item.track.duration_ms)}
+                </div>
               </div>
             </div>
           </div>
         </div>
-      </div>
+      ))}
     </div>
   );
 };

@@ -1,4 +1,5 @@
 import React from "react";
+import { shuffle } from "lodash";
 
 const colors = [
   "from-indigo-500",
@@ -12,28 +13,31 @@ const colors = [
 
 const PlaylistTitle = ({data}) => {
   const [color, setColor] = React.useState(colors[0]);
-  const [opacity, setOpacity] = React.useState(0);
-  const [textOpacity, setTextOpacity] = React.useState(0);
+  // const [opacity, setOpacity] = React.useState(0);
+  // const [textOpacity, setTextOpacity] = React.useState(0);
 
-  console.log(data);
 
-  const changeOpacity = (scrollData) => {
-    const offset = 340;
-    const textOffset = 10;
-    if (scrollData < offset) {
-      const newOpacity = 1 - (offset - scrollData) / offset;
-      setOpacity(newOpacity);
-      setTextOpacity(0);
-    } else {
-      setOpacity(1);
-      const delta = scrollData - offset;
-      const newTextOpacity = 1 - (textOffset - delta) / textOffset;
-      setTextOpacity(newTextOpacity);
-    }
-  };
+  // const changeOpacity = (scrollData) => {
+  //   const offset = 340;
+  //   const textOffset = 10;
+  //   if (scrollData < offset) {
+  //     const newOpacity = 1 - (offset - scrollData) / offset;
+  //     setOpacity(newOpacity);
+  //     setTextOpacity(0);
+  //   } else {
+  //     setOpacity(1);
+  //     const delta = scrollData - offset;
+  //     const newTextOpacity = 1 - (textOffset - delta) / textOffset;
+  //     setTextOpacity(newTextOpacity);
+  //   }
+  // };
+
+      React.useEffect(() => {
+        setColor(shuffle(colors).pop());
+      }, [data.id]);
   return (
     <div
-      onScroll={(e) => changeOpacity(e.target.scrollTop)}
+      // onScroll={(e) => changeOpacity(e.target.scrollTop)}
       className={`flex h-[30vh] max-h-[400px] min-h-[340px] text-[#fff] bg-gradient-to-b to-neutral-900 ${color} px-6 pb-4`}
     >
       <div className="self-end h-[192px] w-[192px] min-w-[192px] me-6">
