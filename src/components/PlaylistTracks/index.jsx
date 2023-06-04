@@ -1,6 +1,6 @@
 import React from "react";
 import moment from "moment";
-import { UilPlay } from "@iconscout/react-unicons";
+import { Link } from "react-router-dom";
 
 const PlaylistTracks = ({ data }) => {
   const millisecondsToMinutesSeconds = (ms) => {
@@ -57,7 +57,7 @@ const PlaylistTracks = ({ data }) => {
       </div>
       {data.tracks.items.map((item, idx) => (
         <div
-          key={item.id}
+          key={item.track.id}
           className="w-full h-full px-3 mt-3 hover:bg-white hover:bg-opacity-10 rounded-lg"
         >
           <div>
@@ -76,12 +76,12 @@ const PlaylistTracks = ({ data }) => {
                   className="mr-4 object-cover w-10 h-10"
                 />
                 <div className="grid items-center grid-rows-2 pr-2">
-                  <a
-                    href={item.track.href}
+                  <Link
+                    to={`/tracks/${item.track.id}`}
                     className="text-[#fff] grid-cols-2 justify-self-start text-sm hover:underline"
                   >
                     {item.track.name}
-                  </a>
+                  </Link>
                   <span className="text-sm box-border font-normal text-[#a7a7a7]">
                     <a
                       href="#"

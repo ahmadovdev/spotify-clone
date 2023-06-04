@@ -8,7 +8,7 @@ export const spotifyCoreApi = createApi({
     prepareHeaders: (headers) => {
       headers.set(
         "Authorization",
-        "Bearer BQB6BlOSampnxXn8lDBEbUvH1-0DrpZ-B3xIHT65llEV_8kxNBYJ-KMhBB_-SWG-hL-FQ3cYeMfSH8Phkh55-AXuUH87eoW1sv4R8XZE89dQ9_Xdmqd0Lf4nmfBKQg-bXX9AIWYwgoPUReRq-dCc96pDcVZOd5qWlwr3a-fsZIvceCYfocZ5toqcBRChnh2sQiB-tbEYkYqUYZwbqWaC5OvUsgrK2Qzglj5ezLwSBtC5jwPW4FzqJuM1NO2nTTeEJKFGasw8fdAhlN4flg0nrw"
+        "Bearer BQBPAoucy3XONZbgCd4guLsr5F0ukeFz_7z5aSz42QP7c3p9-QiOagO2-GR6jzOaAkAyBwQqr9r3MD2nTtl_WGMhycFMKOWPlnlXhLjgctSqQgPbtYOBIizr7RqqYgubWZ-c8G8D6HkfxkVZVU7sPB143l5A48Tgb2GBO3uuN43Rhyl6w0xQq2-cbMDtnSComFbWDCTueHCU7gP7OYN61SmmFsYZDdMl8j-_bmsZTahihcUhba9sGQjK6OAH9t1AbmOTNWHnQc3TeAti5g-XxQ"
       );
       return headers;
     },
@@ -21,7 +21,10 @@ export const spotifyCoreApi = createApi({
     getPlaylistsItems: builder.query({
       query: (playlistId) => `playlists/${playlistId}`,
     }),
+    getSingleTrack: builder.query({
+      query: (trackId) => `tracks/${trackId}`,
+    }),
   }),
 });
 
-export const { useGetFeaturedPlaylistsQuery, useGetPlaylistsItemsQuery } = spotifyCoreApi;
+export const { useGetFeaturedPlaylistsQuery, useGetPlaylistsItemsQuery, useGetSingleTrackQuery } = spotifyCoreApi;

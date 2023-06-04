@@ -1,6 +1,6 @@
 import React from "react";
 import PlaylistHeader from "../../components/PlaylistHeader";
-import PlaylistTitle from "../../components/PlaylistTitle";
+import DetailsHeader from "../../components/DetailsHeader";
 import PlaylistTracks from "../../components/PlaylistTracks";
 import { useGetPlaylistsItemsQuery } from "../../redux/services/spotifyCoreApi";
 import { useParams } from "react-router-dom";
@@ -12,8 +12,8 @@ export const Playlist = () => {
   if (error) return console.log(error);
   return (
     <section className="mt-[-64px]">
-      <PlaylistTitle data={data} />
-      <PlaylistHeader  />
+      <DetailsHeader data={data} />
+      <PlaylistHeader />
       <PlaylistTracks data={data} />
     </section>
   );
