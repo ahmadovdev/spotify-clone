@@ -11,19 +11,11 @@ const colors = [
   "from-purple-500",
 ];
 
-<<<<<<< HEAD
 const DetailsHeader = ({ data, types }) => {
   const [color, setColor] = React.useState(colors[0]);
   React.useEffect(() => {
     setColor(shuffle(colors).pop());
   }, [data.id]);
-=======
-const DetailsHeader = ({data, types}) => {
-  const [color, setColor] = React.useState(colors[0]);
-      React.useEffect(() => {
-        setColor(shuffle(colors).pop());
-      }, [data.id]);
->>>>>>> 691be61c462a7b0facf26ec92b832b32154157f8
   const {
     album,
     artists,
