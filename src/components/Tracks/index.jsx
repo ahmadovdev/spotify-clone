@@ -14,7 +14,7 @@ const Tracks = () => {
   if (error) return console.log(error);
   return (
     <section className="mt-[-64px]">
-      <DetailsHeader tdata={trackData} />
+      <DetailsHeader data={data} types="track" />
     </section>
   );
 };

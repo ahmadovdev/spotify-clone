@@ -12,7 +12,7 @@ export const Playlist = () => {
   if (error) return console.log(error);
   return (
     <section className="mt-[-64px]">
-      <DetailsHeader data={data} />
+      <DetailsHeader data={data} types="playlist" />
       <PlaylistHeader />
       <PlaylistTracks data={data} />
     </section>
