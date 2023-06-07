@@ -8,7 +8,7 @@ export const spotifyCoreApi = createApi({
     prepareHeaders: (headers) => {
       headers.set(
         "Authorization",
-        "Bearer BQBPAoucy3XONZbgCd4guLsr5F0ukeFz_7z5aSz42QP7c3p9-QiOagO2-GR6jzOaAkAyBwQqr9r3MD2nTtl_WGMhycFMKOWPlnlXhLjgctSqQgPbtYOBIizr7RqqYgubWZ-c8G8D6HkfxkVZVU7sPB143l5A48Tgb2GBO3uuN43Rhyl6w0xQq2-cbMDtnSComFbWDCTueHCU7gP7OYN61SmmFsYZDdMl8j-_bmsZTahihcUhba9sGQjK6OAH9t1AbmOTNWHnQc3TeAti5g-XxQ"
+        "Bearer BQBKUVzGMSOWheGwCWwy2fMV3Va0Rwta_zqRxi5RAGs4q2lu7yrImzb2OxHOpr7_OcoiXqboSKP1B0difEYN9BWYe00W9IIg50GplBhWdBavROVO84AhDQ1S1oFmV_9LiJSVfL2D82MnPGvwqJc6OIa4y5OlcI1S6OZPyAvsOzxCaPcyUtvII98GBxx3jt3wOhMvrFlAEWIW5UWGa6jU2-JxysELGe4sYWxqjX4O1uYyGh6mhaqv5a04Nm2NRFGOBZRjpB9UxoKhBQWNyOsOAA"
       );
       return headers;
     },

@@ -11,32 +11,48 @@ const colors = [
   "from-purple-500",
 ];
 
-const DetailsHeader = ({data}) => {
-  const { images, type, name, description, followers, tracks } = data
+const DetailsHeader = ({data, types}) => {
   const [color, setColor] = React.useState(colors[0]);
       React.useEffect(() => {
         setColor(shuffle(colors).pop());
       }, [data.id]);
+  const {
+    album,
+    artists,
+    images,
+    type,
+    name,
+    description,
+    followers,
+    tracks,
+    owner,
+  } = data;
+
+  const img = types === "playlist" ? images[0].url : album.images[0].url;
+  const playlistType = type;
+  const nameArtist = name;
+  const ownerPlaylist =
+    types === "playlist" ? owner.display_name : artists[0].name;
+  const typeElement =
+    types === "playlist" ? `${followers.total} likes` : album.name;
+  const totalSongs =
+    types === "playlist" ? `${tracks.total} songs, about 11 hr` : null;
   return (
     <div
       className={`flex h-[30vh] max-h-[400px] min-h-[340px] text-[#fff] bg-gradient-to-b to-neutral-900 ${color} px-6 pb-4`}
     >
       <div className="self-end h-[192px] w-[192px] min-w-[192px] me-6">
         <div className="h-[inherit]">
-          <img
-            className="h-full w-full"
-            src={images[0].url}
-            alt="playlist"
-          />
+          <img className="h-full w-full" src={img} alt="playlist" />
         </div>
       </div>
       <div className="flex justify-end flex-col">
         <span className="text-sm box-border font-bold text-[inherit]">
-          {type}
+          {playlistType}
         </span>
         <span className="leading-normal mt-2 text-left w-full">
           <h1 className="mt-[0.08rem] mb-[0.8rem] w-full text-8xl font-black text-[#fff]">
-            {name}
+            {nameArtist}
           </h1>
         </span>
         <span className="text-[#c7c5bc] text-sm box-border font-normal">
@@ -54,13 +70,15 @@ const DetailsHeader = ({data}) => {
               </div>
             </figure>
             <span className="text-sm font-bold box-border text-[inherit]">
-              <a href="#">Spotify</a>
+              <a href="#">{ownerPlaylist}</a>
             </span>
             <span className="text-[inherit] box-border font-normal text-sm">
-              {followers.total} likes
+              {typeElement}
             </span>
             <span className="text-[inherit] box-border font-normal text-sm">
-              {tracks.total} songs, about 11 hr
+              {types === "playlist"
+                ? `${tracks.total} +  songs, about 11 hr`
+                : null}
             </span>
           </div>
         </div>
