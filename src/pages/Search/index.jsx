@@ -1,14 +1,18 @@
 import React from "react";
+import { useParams } from "react-router-dom";
 import FeaturedPlaylist from "../../components/FeaturedPlaylist";
 import SearchResult from "../../components/SearchResult";
+import { useGetSongsBySearchQuery } from "../../redux/services/spotifyCoreApi";
 
 export const Search = () => {
-  const [searchData, setSearchData] = React.useState(null)
+  const { searchTerm } = useParams();
+  const { data, error, isFetching } = useGetSongsBySearchQuery(searchTerm);
+  console.log(data, "search");
+  if (isFetching) return console.log("loading");
+  if (error) return console.log(error);
   return (
     <div className="px-6">
-      {
-        searchData === null ? <FeaturedPlaylist /> : <SearchResult /> 
-      }
+      {searchTerm ? <SearchResult /> : <FeaturedPlaylist />}
     </div>
   );
 };

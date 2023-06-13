@@ -3,7 +3,7 @@ import { UilPlay } from "@iconscout/react-unicons";
 
 const SearchResult = () => {
   return (
-    <section className="h-screen ">
+    <section className="h-screen px-4">
       <div className="grid grid-cols-[auto,1fr] ">
         <div className="space-y-4">
           <h2 className="text-2xl font-bold text-[#fff]">Top Results</h2>

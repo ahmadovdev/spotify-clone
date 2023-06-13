@@ -1,6 +1,5 @@
 import { createApi, fetchBaseQuery } from "@reduxjs/toolkit/query/react";
 
-
 export const spotifyCoreApi = createApi({
   reducerPath: "spotifyCoreApi",
   baseQuery: fetchBaseQuery({
@@ -8,7 +7,7 @@ export const spotifyCoreApi = createApi({
     prepareHeaders: (headers) => {
       headers.set(
         "Authorization",
-        "Bearer BQCCNF92dOgGWClgWYZ1MjWxew8rnAAxSQQMPz8XVcx0qqipetNo5Udkt8FOwylf9FOqVXj13sVcgFaMsIA-8bGdY3dX0yHj3TC2QIEFD5DX49SmlT1XgTTk1_IlbqKTHYHH26n2RUjh-qvqDCpYobAambswz3HNNEZOvTzr-k_cwlMI_ZGptRkyg06_EWNml2eQUVExr4HaLSEdDmUMyFdmFj9BwuKh65MBepIh4ZVj7KrkSkemQtzsunJHGrVFC67i08zdZvgiHwnvKb2N4Q"
+        "Bearer BQCAwRpgQ3A-8arnoLyAULm5CmacPoXJBM9e_Iph1tvnzbUV3M3Y-5G3IYh2dhMPQ3wd8qwbsGfdSRoI0nawe0JO0Hvoe-ud1u7UfzfduY1t-P_dU-XoBLNhg0TsSQTzeA43RMOAOvZhUhojgxxaNuTfH6ux4SOes3EBi_yQeeYf9LSwFsX_uDT65F0UArqrd70dAzZf6WNMKFTgeaN2jLbdouZ4hxlaz0YQSaPz42HtqoJhRXfkyxDQmLlOvTpS4oW9A7MTCcEPMii9TyPbuw"
       );
       return headers;
     },
@@ -24,7 +23,16 @@ export const spotifyCoreApi = createApi({
     getSingleTrack: builder.query({
       query: (trackId) => `tracks/${trackId}`,
     }),
+    getSongsBySearch: builder.query({
+      query: (searchTerm) =>
+        `search?query=${searchTerm}&type=artist&offset=0&limit=20`,
+    }),
   }),
 });
 
-export const { useGetFeaturedPlaylistsQuery, useGetPlaylistsItemsQuery, useGetSingleTrackQuery } = spotifyCoreApi;
+export const {
+  useGetFeaturedPlaylistsQuery,
+  useGetPlaylistsItemsQuery,
+  useGetSingleTrackQuery,
+  useGetSongsBySearchQuery,
+} = spotifyCoreApi;

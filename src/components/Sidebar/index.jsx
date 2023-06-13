@@ -10,12 +10,12 @@ const links = [
   },
   {
     name: "Search",
-    to: "/search",
+    to: "search",
     icon: UilSearch,
   },
   {
     name: "YourLibrary",
-    to: "/library",
+    to: "library",
     icon: UilMusic,
   },
 ];
