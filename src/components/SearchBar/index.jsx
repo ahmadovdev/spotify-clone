@@ -1,12 +1,10 @@
 import React from "react";
 import { UilSearch } from "@iconscout/react-unicons";
-import { useNavigate,useLocation } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 const SearchBar = () => {
-  const location = useLocation()
   const navigate = useNavigate();
   const [searchValue, setSearchTerm] = React.useState("");
-  console.log(location, 'loc');
   const handleInputChange = (e) => {
     setSearchTerm(e.target.value);  
   };

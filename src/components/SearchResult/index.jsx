@@ -1,7 +1,7 @@
 import React from "react";
 import { UilPlay } from "@iconscout/react-unicons";
 
-const SearchResult = () => {
+const SearchResult = ({data}) => {
   return (
     <section className="h-screen px-4">
       <div className="grid grid-cols-[auto,1fr] ">
@@ -12,7 +12,7 @@ const SearchResult = () => {
               <div className="absolute opacity-0 transition-all ease-in-out duration-500 shadow-2xl shadow-neutral-900 z-10 h-12 w-12 flex items-center justify-center rounded-full bg-green-500 bottom-6 right-8 group-hover:opacity-100 group-hover:bottom-8">
                 <UilPlay className="h-6 w-6 text-black" />
               </div>
-              {
+              
                 <>
                   <img
                     className="h-28 w-28 rounded"
@@ -26,7 +26,7 @@ const SearchResult = () => {
                     </span>
                   </p>
                 </>
-              }
+              
             </div>
           </div>
         </div>

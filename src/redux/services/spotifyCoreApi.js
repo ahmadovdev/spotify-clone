@@ -7,7 +7,7 @@ export const spotifyCoreApi = createApi({
     prepareHeaders: (headers) => {
       headers.set(
         "Authorization",
-        "Bearer BQCAwRpgQ3A-8arnoLyAULm5CmacPoXJBM9e_Iph1tvnzbUV3M3Y-5G3IYh2dhMPQ3wd8qwbsGfdSRoI0nawe0JO0Hvoe-ud1u7UfzfduY1t-P_dU-XoBLNhg0TsSQTzeA43RMOAOvZhUhojgxxaNuTfH6ux4SOes3EBi_yQeeYf9LSwFsX_uDT65F0UArqrd70dAzZf6WNMKFTgeaN2jLbdouZ4hxlaz0YQSaPz42HtqoJhRXfkyxDQmLlOvTpS4oW9A7MTCcEPMii9TyPbuw"
+        "Bearer BQB3tglWaFu61fR3Innoh790nxvfmW9u60DNpq_6muDC_j-hJrFw2Y4vgScSEa0Gxy-oA-nPkxSxlLQDRqhetQ21R7X4W7QmmDi4xheXLbDtk2ZKdBenqzGnFrpDM1N7g7RoBpbstTJvzBTWV0Cv1Iyfz9uDr7XtaJdvAvwMwTOnNllBousIuSvok_cz5C3Qkg4Igj0d77sId_hoeWdU0FGwXt2xSKZZoeDLq7jmi-Fc7tK9pl-ORYQDibmENqV4ETPisYjG97NDDss2dPufjw"
       );
       return headers;
     },
@@ -25,8 +25,9 @@ export const spotifyCoreApi = createApi({
     }),
     getSongsBySearch: builder.query({
       query: (searchTerm) =>
-        `search?query=${searchTerm}&type=artist&offset=0&limit=20`,
+        `search?query=${searchTerm}&type=playlist,artist,album,track&offset=0&limit=20`,
     }),
+    
   }),
 });
 
