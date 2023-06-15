@@ -10,7 +10,7 @@ const PlayListsSection = ({data}) => {
     // resizer function
     const handleResize = () => {
       const columnCalculation = Math.floor(
-        cardsSectionRef.current.getBoundingClientRect().width / 195
+        cardsSectionRef.current.getBoundingClientRect().width / 190
       );
       setColumnCount(columnCalculation);
     };

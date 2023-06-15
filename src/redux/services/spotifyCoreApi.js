@@ -7,15 +7,14 @@ export const spotifyCoreApi = createApi({
     prepareHeaders: (headers) => {
       headers.set(
         "Authorization",
-        "Bearer BQB3tglWaFu61fR3Innoh790nxvfmW9u60DNpq_6muDC_j-hJrFw2Y4vgScSEa0Gxy-oA-nPkxSxlLQDRqhetQ21R7X4W7QmmDi4xheXLbDtk2ZKdBenqzGnFrpDM1N7g7RoBpbstTJvzBTWV0Cv1Iyfz9uDr7XtaJdvAvwMwTOnNllBousIuSvok_cz5C3Qkg4Igj0d77sId_hoeWdU0FGwXt2xSKZZoeDLq7jmi-Fc7tK9pl-ORYQDibmENqV4ETPisYjG97NDDss2dPufjw"
+        "Bearer BQDQCr_1fnLHF_Ot5e_cMV5pkvfAJwjVJZLRHo68GkyseNSSJWvEP-NpRmuyHKs5A5qAlWKq3SsVJ5NzfJ_rVFYeYTPiH5Ap4XNOYkLGAJd3PRlFiQuwH0p3YdXtTgkOOzsOdnu--FPcIFhsQoV6Wd6YroomMeEIHPXUCXewtaitcilOZytxzRGxPPlotjnk9q3ScvRtnpiNaisx0oRphwWlqu6LlmRFteaBOMZa24FynXutuDPQ41Od5ObllQGcYUy9J_r6gyLtnQOJZF_NfQ"
       );
       return headers;
     },
   }),
   endpoints: (builder) => ({
     getFeaturedPlaylists: builder.query({
-      query: () =>
-        "browse/featured-playlists?country=UZ&timestamp=2023-05-28T10%3A32%3A00&offset=0&limit=15",
+      query: () => "browse/featured-playlists?country=UZ",
     }),
     getPlaylistsItems: builder.query({
       query: (playlistId) => `playlists/${playlistId}`,
@@ -27,7 +26,6 @@ export const spotifyCoreApi = createApi({
       query: (searchTerm) =>
         `search?query=${searchTerm}&type=playlist,artist,album,track&offset=0&limit=20`,
     }),
-    
   }),
 });
 
