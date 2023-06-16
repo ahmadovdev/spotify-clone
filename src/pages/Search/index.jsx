@@ -2,7 +2,7 @@ import React from "react";
 import { useParams } from "react-router-dom";
 import FeaturedPlaylist from "../../components/FeaturedPlaylist";
 import SearchResult from "../../components/SearchResult";
-import {  useGetSongsBySearchQuery } from "../../redux/services/spotifyCoreApi";
+import { useGetSongsBySearchQuery } from "../../redux/services/spotifyCoreApi";
 
 export const Search = () => {
   const { searchTerm } = useParams();

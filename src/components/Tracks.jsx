@@ -1,7 +1,7 @@
 import React from "react";
-import DetailsHeader from "../DetailsHeader";
+import DetailsHeader from "./DetailsHeader";
 import { useParams } from "react-router-dom";
-import { useGetSingleTrackQuery } from "../../redux/services/spotifyCoreApi";
+import { useGetSingleTrackQuery } from "../redux/services/spotifyCoreApi";
 
 const Tracks = () => {
   const { trackId } = useParams();

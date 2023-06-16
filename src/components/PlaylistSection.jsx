@@ -1,5 +1,5 @@
 import React from "react";
-import PlaylistCard from "../PlaylistCard";
+import PlaylistCard from "./PlaylistCard";
 
 const PlayListsSection = ({data}) => {
   const cardsSectionRef = React.useRef();

@@ -1,6 +1,6 @@
 import React from "react";
 import { UilPlay } from "@iconscout/react-unicons";
-import PlaylistCard from "../PlaylistCard";
+import PlaylistCard from "./PlaylistCard";
 
 const SearchResult = ({ playlists }) => {
   return (
@@ -54,7 +54,7 @@ const SearchResult = ({ playlists }) => {
       <div
         className={`grid gap-6 grid-cols-[repeat(auto-fill,minmax(175px,1fr))] my-4`}
       >
-        <PlaylistCard playlists={playlists.slice(0,9)} />
+        <PlaylistCard playlists={playlists.slice(0, 9)} />
       </div>
     </section>
   );

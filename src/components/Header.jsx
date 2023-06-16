@@ -1,7 +1,7 @@
 import React from "react";
 import { UilAngleRight, UilAngleLeft } from "@iconscout/react-unicons";
 import { useLocation } from "react-router-dom";
-import SearchBar from "../SearchBar";
+import SearchBar from "./SearchBar";
 
 const Header = () => {
   const location = useLocation().pathname

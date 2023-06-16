@@ -1,15 +1,15 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import { useGetFeaturedPlaylistsQuery } from "../../redux/services/spotifyCoreApi";
+import { useGetFeaturedPlaylistsQuery } from "../redux/services/spotifyCoreApi";
 
 const FeaturedPlaylist = () => {
   const cardsSectionRef = React.useRef();
   const [columnCount, setColumnCount] = React.useState(5);
   const { data, idLoading, error } = useGetFeaturedPlaylistsQuery();
   console.log(data && data.playlists.items, "das");
-  
-  if (idLoading) return <div>Loading...</div>
-  if (error) return <div>Error occurred: {error.message}</div>
+
+  if (idLoading) return <div>Loading...</div>;
+  if (error) return <div>Error occurred: {error.message}</div>;
 
   React.useEffect(() => {
     // resizer function
@@ -36,11 +36,11 @@ const FeaturedPlaylist = () => {
         {data &&
           data.playlists.items.map((playlist, id) => (
             <>
-                <Link to={`/playlists/${playlist.id}`}>
-              <div
-                className="w-full h-[190px] bg-[#171717] rounded-md overflow-hidden relative"
-                key={id}
-              >
+              <Link to={`/playlists/${playlist.id}`}>
+                <div
+                  className="w-full h-[190px] bg-[#171717] rounded-md overflow-hidden relative"
+                  key={id}
+                >
                   <span className="box-border p-4 absolute text-slate-50 no-underline text-base font-bold">
                     {playlist.name}
                   </span>
@@ -49,8 +49,8 @@ const FeaturedPlaylist = () => {
                     alt="Pic 1"
                     className="w-[100px] h-[100px] absolute right-0 bottom-0 rotate-[25deg] translate-x-[18%] translate-y-[-2%]"
                   />
-              </div>
-                </Link>
+                </div>
+              </Link>
             </>
           ))}
       </div>

@@ -1,5 +1,5 @@
 import React from "react";
-import PlayListsSection from "../../components/PlayListsSection";
+import PlayListsSection from "../../components/PlaylistSection";
 import { useGetFeaturedPlaylistsQuery } from "../../redux/services/spotifyCoreApi";
 
 export const Home = () => {
