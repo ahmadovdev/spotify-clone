@@ -55,7 +55,7 @@ const PlaylistTracks = ({ data }) => {
           </div>
         </div>
       </div>
-      {data.tracks.items.map((item, idx) => (
+      {data.tracks.items.slice(0,50).map((item, idx) => (
         <div
           key={item.track.id}
           className="w-full h-full px-3 mt-3 hover:bg-white hover:bg-opacity-10 rounded-lg"

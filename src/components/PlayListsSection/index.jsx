@@ -32,9 +32,12 @@ const PlayListsSection = ({data}) => {
             </h2>
           </div>
           <div
-            className={`grid gap-6 grid-cols-[repeat(auto-fill,minmax(164px,1fr))] my-4`}
+            className={`grid gap-6 grid-cols-[repeat(auto-fill,minmax(165px,1fr))] my-4`}
           >
-            <PlaylistCard playlists={data.playlists} limiter={columnCount} />
+            <PlaylistCard
+              playlists={data?.playlists.items}
+              limiter={columnCount}
+            />
           </div>
         </section>
       </div>
